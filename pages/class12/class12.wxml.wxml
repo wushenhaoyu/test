@@ -1,0 +1,88 @@
+<view class="chat-container" bind:tap="NextMessage">
+  <!-- <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/1t.png" mode="aspectFill" style="position: relative; left: -30rpx; top: 460rpx; width: 750rpx; height: 1452rpx; display: block; box-sizing: border-box"></image> -->
+    <scroll-view scroll-y="true" style="height: 1146rpx; width: 750rpx; display: block; box-sizing: border-box" scroll-into-view="{{scrollIntoView}}">
+        <block wx:for="{{messages}}" wx:for-index="idx" wx:key="*this">
+            <block wx:if="{{idx <= displayIndex}}">
+                <view id="msg{{idx}}" class="message" wx:if="{{item.from == 'me'}}" style="text-align: right; width: 450rpx; height: 84rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -70rpx">
+                    <image style="position: relative; left: 344rpx; top: -4rpx; width: 82rpx; height: 76rpx; display: inline-block; box-sizing: border-box" class="avatar" src="{{item.avatarUrl}}" wx:if="{{item.avatarUrl}}"/>
+                    <text class="nickname" style="position: relative; left: 256rpx; top: 26rpx">{{item.nickname}}</text>
+                    <view class="button-3" style="position: relative; left: 129rpx; top: -93rpx; width: 449rpx; height: 80rpx; display: block; box-sizing: border-box">{{item.text}}</view>
+                    <image wx:if="{{item.imageUrl}}" class="button-3" src="{{item.imageUrl}}" ></image>
+                    <navigator wx:if="{{item.buttonUrl}}" url="{{item.buttonUrl}}" class="button">Go</navigator>
+                </view>
+                <view id="msg{{idx}}" class="message" wx:if="{{item.from == 'you'}}" style="text-align: left; position: relative; left: 0rpx; top: -50rpx; width: 450rpx; height: 142rpx; display: block; box-sizing: border-box">
+                    <image style="position: relative; left: 0rpx; top: 1rpx" class="avatar" src="{{item.avatarUrl}}" wx:if="{{item.avatarUrl}}"/>
+                    <text class="nickname" style="position: relative; left: -88rpx; top: 31rpx">{{item.nickname}}</text>
+                    <view class="button-3" wx:if="{{!item.imageUrl}}"style="width: 446rpx; height: 80rpx; display: block; box-sizing: border-box; position: relative; left: 104rpx; top: -84rpx">{{item.text}}</view>
+                    <image style="width: 188rpx; height: 127rpx; display: inline-block; box-sizing: border-box; position: relative; left: -45rpx; top: 18rpx" wx:if="{{item.imageUrl}}" class="image" src="{{item.imageUrl}}" />
+                </view>
+            </block>
+        </block>
+    </scroll-view>
+    <view class="input-container" wx:if="{{!showOverlay1}}" style="position: relative; left: 0rpx; top: 36rpx">
+        <input class="input" type="text" model:value="{{inputValue}}" bind:input="updateInputValue" placeholder="Type your message..."/>
+        <button class="send-button" style="width: 306rpx; height: 100rpx; display: block; box-sizing: border-box; left: 20rpx; top: 4rpx; position: relative">Send</button>
+    </view>
+</view>
+
+<view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">下载</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">先看看</view>
+      </view>
+</view>
+
+<view class="modal" wx:if="{{showOverlay2}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+<view class="modal" wx:if="{{showOverlay3}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+<view class="modal" wx:if="{{showOverlay4}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+<view class="modal" wx:if="{{showOverlay5}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+<view class="modal" wx:if="{{showOverlay6}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试6</view>
+        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+<view class="modal" wx:if="{{showOverlay7}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
+        <view class="button-3" bindtap="button13Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">补齐</view>
+        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+</view>
+
+<view class="finlist" wx:if="{{showGameOverModal1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">损失了2000点</text>
+        <button class='btn1' bindtap="handleGameOver1" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">意识到不对，退群</text>
+        <button class='btn1' bindtap="handleGameOver2" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>

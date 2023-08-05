@@ -1,0 +1,62 @@
+<!--pages/class1/class1.wxml.wxml-->
+<view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <image class="background-image" src="{{image1}}" mode="aspectFill"></image>
+  <image class="background-image" src="{{image2}}" wx:if="{{showimage}}" mode="aspectFill"></image>
+  <image class="background-image" src="{{image1}}" wx:if="{{!showimage}}" mode="aspectFill"></image>
+  
+    <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
+        <text>{{dialogueText}}</text>
+    </view>
+</view>
+
+  <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button class='button-53' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我收到了一个陌生的包裹</button>
+        <button class='button-53' bindtap="button2Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我没看到</button>
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay2}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button class='button-53' bindtap="button3Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">那我应该怎么办？</button>
+        <button class='button-53' bindtap="button4Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">不想理睬</button>
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay3}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button class='button-53' bindtap="button5Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">有些慌张</button>
+        <button class='button-53' bindtap="button6Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">怀疑警官</button>
+      </view>
+    </view>
+    <view class="modal" wx:if="{{showOverlay4}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button class='button-53' bindtap="button7Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">什么保证金？</button>
+
+      </view>
+    </view>
+    <view class="modal" wx:if="{{showOverlay5}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button  class='button-53' bindtap="button9Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">缴纳抵押金（-200）</button>
+        <button class='button-53' bindtap="button10Tap" style="position: relative; left: -1rpx; top: 140rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">不去理睬</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">那个警官再也没有出现过</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">令人奇怪，那个警官再也没找过你</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+

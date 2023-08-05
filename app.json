@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/main/main.wxml",
+    "pages/class12/class12.wxml",
+    "pages/class10/class10.wxml",
+    "pages/class8/class8.wxml",
+    "pages/class9/class9.wxml",
+    "pages/class7/class7.wxml",
+
+    "pages/class6/class6.wxml",
+    "pages/bird/bird",
+
+
+    "pages/class5/class5.wxml",
+    "pages/class4/class4.wxml",
+    "pages/class2/class2.wxml",
+
+    "pages/class1/class1.wxml",
+    "pages/class3/class3.wxml",
+    
+
+
+
+
+
+
+    "pages/index/index",
+    "pages/logs/logs"
+
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

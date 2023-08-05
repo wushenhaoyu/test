@@ -1,0 +1,163 @@
+<!--pages/class1/class1.wxml.wxml-->
+<view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <!-- <image class="background-image" src="	cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230625131648.jpg" mode="aspectFill"></image> -->
+
+  <image class="background-image" src="{{image1}}" wx:if="{{showimage}}" mode="aspectFill"></image>
+  <image class="background-image" src="{{image1}}" wx:if="{{!showimage}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r4.png" wx:if="{{showren1}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r7.jpg" wx:if="{{showren2}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r6.jpg" wx:if="{{showren3}}" mode="aspectFill"></image>
+    <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
+        <text>{{dialogueText}}</text>
+    </view>
+</view>
+
+<view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <view class="button-53" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">向他发送传单</view>
+        <view class="button-53" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看别人</view>
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay2}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <view class="button-53" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">向他发送传单</view>
+        <view class="button-53" bindtap="button4Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看别人</view>
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay3}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <view class="button-53" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">向他发送传单</view>
+        <view class="button-53" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+      </view>
+    </view>
+
+
+    <view class="finlist" wx:if="{{showGameOverModal1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">今天的工作结束了</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">今天的工作结束了</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+<!-- 骰子模版视图 -->
+
+<template name="first">
+    <view class="first face" style="position: relative; left: 0rpx; top: 176rpx">
+        <span class="pip"></span>
+    </view>
+</template>
+
+<template name="second">
+    <view class="second face" style="position: relative; left: 0rpx; top: 176rpx">
+        <span class="pip"></span>
+        <span class="pip"></span>
+    </view>
+</template>
+
+<template name="third">
+    <view class="third face" style="position: relative; left: 0rpx; top: 176rpx">
+        <span class="pip"></span>
+        <span class="pip third-item-center"></span>
+        <span class="pip"></span>
+    </view>
+</template>
+
+<template name="fourth">
+    <view class="fourth face" style="position: relative; left: 0rpx; top: 176rpx">
+        <!--按照列排列两个点-->
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view>
+        <!--按照列排列另外两个点-->
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view>
+    </view>
+</template>
+
+<template name="fifth">
+    <view class="fifth face" style="position: relative; left: 0rpx; top: 176rpx">
+        <!--按照列排列两个点-->
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view>
+        <!--按照列排列中间一个点-->
+        <view class="column fifth-column-center">
+            <span class="pip"></span> 
+        </view>
+        <!--按照列排列另外两个点--> 
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view>
+    </view>
+</template>
+
+<template name="sixth">
+    <view class="sixth face" style="position: relative; left: 0rpx; top: 176rpx">
+        <!--按照列排列三个点-->
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view> 
+         <!--按照列排列另外三个点-->
+        <view class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </view>
+    </view>
+</template>
+<view style="visibility:{{isShow}}">
+  <view class="modal2"  style="width: 750rpx; height: 938rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 390rpx; position: fixed">
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 58rpx; top: 76rpx; width: 652rpx; height: 372rpx; display: block; box-sizing: border-box"></image>
+  <text style="width: 312rpx; height: 46rpx; display: block; box-sizing: border-box; position: relative; left: 272rpx; top: -246rpx">你的点数为:{{total}}</text>
+  <text style="width: 440rpx; height: 80rpx; display: block; box-sizing: border-box; position: relative; left: 2rpx; top: -166rpx">(点数大于8发放成功)</text>
+  <view class="button-53" type="{{buttonType}}"  bindtap="checkds" style="position: relative; left: -251rpx; top: -114rpx; width: 260rpx; height: 80rpx; display: block; box-sizing: border-box">确定</view>
+  </view>
+</view>
+<!-- 展示视图 -->
+<view class="modal" wx:if="{{playOverlay1}}"> 
+    
+    <view class="second-row">
+      <view class="dice-box">
+        <block>
+            <template is="{{dice[num1]}}"></template>
+        </block>
+    </view>
+        <view class="dice-box">
+        <block>
+            <template is="{{dice[num2]}}"></template>
+        </block>
+         </view>
+            <view class="dice-box">
+        <block>
+            <template is="{{dice[num3]}}"></template>
+        </block>
+    </view>
+    </view>
+
+<!-- 按钮 -->
+    <view class="button-box">
+        <button type="{{buttonType}}"  bindtap="shakeClick"  style="position: relative; left: 0rpx; top: 78rpx; width: 260rpx; height: 78rpx; display: block; box-sizing: border-box">{{buttonValue}}</button>
+    </view>
+</view>
+
+

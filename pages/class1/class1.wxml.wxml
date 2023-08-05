@@ -1,0 +1,63 @@
+<!--pages/class1/class1.wxml.wxml-->
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+
+<view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <image class="background-image" src="{{image1}}" mode="aspectFill"></image>
+  <image class="background-image" src="{{image2}}" wx:if="{{showimage}}" mode="aspectFill"></image>
+  <image class="background-image" src="{{image1}}" wx:if="{{!showimage}}" mode="aspectFill"></image>
+  
+    <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
+        <text>{{dialogueText}}</text>
+    </view>
+</view>
+
+  <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx" >
+      <!-- HTML !-->
+    <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+
+
+<view class="button-53" role="button"  bindtap="button1Tap" style="position: relative; left: -1rpx; top: 138rpx; width: 528rpx; height: 100rpx; display: flex; box-sizing: border-box"
+hover-class="button-54">
+  怎么了？
+</view>
+
+<button class='user-phone-btn' style="position: relative; left: 1rpx; top: -168rpx; width: 528rpx; height: 100rpx; display: block; box-sizing: border-box"
+hover-class="user-phone-btn2">怎么了？</button>
+
+        <!-- <button class="user-phone-btn" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我不是很了解</button>
+        <button bindtap="button2Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">是的，我知道</button> -->
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay2}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button bindtap="button3Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">拒绝并向警察举报该团伙1</button>
+        <button bindtap="button4Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">好的，我要加入1</button>
+      </view>
+    </view>
+
+    <view class="modal" wx:if="{{showOverlay3}}">
+      <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <button bindtap="button5Tap" style="position: relative; left: -1rpx; top: 100rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">拒绝并向警察举报该团伙2</button>
+        <button bindtap="button6Tap" style="position: relative; left: -1rpx; top: 144rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">好的，我要加入2</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text style="position: relative; left: -1rpx; top: 15rpx">事件结算：</text>
+        <button bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 244rpx">确定</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/3.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text style="position: relative; left: -1rpx; top: 15rpx">事件结算：</text>
+        <button bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 244rpx">确定</button>
+      </view>
+    </view>
+

@@ -1,0 +1,35 @@
+<!--pages/class1/class1.wxml.wxml-->
+<view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <image class="background-image" src="{{image1}}" mode="aspectFill"></image>
+
+  
+    <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
+        <text>{{dialogueText}}</text>
+    </view>
+</view>
+<image class="background-image" wx:if="{{showimage}}" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/g.png" mode="aspectFill" style="position: absolute; left: 115rpx; top: 282rpx; width: 522rpx; height: 522rpx; display: block; box-sizing: border-box"></image>
+  <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
+    
+    <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <view class="button-53" bindtap="button1Tap" style="position: relative; left: -186rpx; top: 306rpx; width: 264rpx; height: 88rpx; display: block; box-sizing: border-box">接收包裹</view>
+        <view class="button-53" bindtap="button2Tap" style="position: relative; left: 168rpx; top: 218rpx; width: 264rpx; height: 88rpx; display: block; box-sizing: border-box">拒绝包裹</view>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">获得了该包裹</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+    <view class="finlist" wx:if="{{showGameOverModal2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">你拒绝了它</text>
+        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>

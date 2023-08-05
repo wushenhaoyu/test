@@ -1,0 +1,11 @@
+<view class="container">
+  <scroll-view class="chat-area" scroll-y style="width: 710rpx; height: 1196rpx; display: block; box-sizing: border-box">
+    <view class="chat-item" wx:for="{{chatList}}" wx:key="index">
+      <text class="chat-text">{{item}}</text>
+    </view>
+  </scroll-view>
+  <view class="input-area">
+    <input class="input-box" type="text" bindinput="bindInput" value="{{inputText}}" placeholder="输入消息" />
+    <button class="send-btn" bindtap="sendMsg">发送</button>
+  </view>
+</view>

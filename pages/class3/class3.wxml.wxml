@@ -1,0 +1,22 @@
+<view class='container'>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/1t.png" mode="aspectFill"></image>
+  
+	<view class='content-bottom' bindtouchmove='touchMove' bindtouchstart='touchStart' bindtouchend='touchEnd'>
+		<view wx:for="{{ground}}" wx:for-item="cols" class='ground-row'>
+			<view wx:for="{{cols}}" class='ground-col'>
+				<view class='block block{{item}}'></view>
+			</view>			
+		</view>
+	</view>
+
+		<view class='top-item top-score' style="width: 398rpx; height: 92rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -994rpx">
+			<view class='score-description' style="position: relative; left: 0rpx; top: 1rpx">得分</view>
+			<view class='score-number' style="position: relative; left: 0rpx; top: 0rpx">{{score}}</view>
+		</view>
+		<view class='top-item top-start' bindtap='goStart' style="position: relative; left: 0rpx; top: -108rpx; width: 398rpx; height: 130rpx; display: block; box-sizing: border-box">START</view>
+		<!-- <view class='top-item top-score' style="width: 172rpx; height: 127rpx; display: block; box-sizing: border-box">
+			<view class='score-description'>历史最高</view>
+			<view class='score-number'>{{maxScore}}</view>
+		</view> -->
+
+</view>
