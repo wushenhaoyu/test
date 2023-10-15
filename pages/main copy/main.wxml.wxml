@@ -1,0 +1,55 @@
+<!--pages/main/main.wxml.wxml-->
+<view class="container back b1">
+
+<view style="display: flex;">
+
+</view>
+<view style="font-size: 15vw;font-weight: bold;font-style: oblique;background-image:linear-gradient(to left, rgb(255,240,132) , rgb(255,178,74));-webkit-background-clip: text;background-clip: text;color: transparent;">诈骗小游戏</view>
+  <view style="display: flex; align-items: center;">
+    <view style="justify-content: center;">
+        <view><button bindtap="kaishi" class="cu-btn lg margin shadow-lg animation-{{animation == 'kaishi'? 'scale-down' : '' }}" style="color: rgb(255,231,115);background-color: rgb(72,48,41);font-size: 4vh;width: 60vw;padding: 30px;border-radius: 5vw;">开始游戏</button></view>
+        <view><button bindtap="shuoming" class="cu-btn lg margin shadow-lg animation-{{animation == 'shuoming' ? 'scale-down' : '' }}" style="color: rgb(255,231,115);background-color: rgb(72,48,41);font-size: 4vh;width: 60vw;padding: 30px;border-radius: 5vw;">游戏说明</button></view>
+    </view>
+</view>
+
+
+
+  
+</view>
+<image style="position: absolute;width: 100vw;height: 100vh;left: 0;top: 0;z-index: -1;" src="https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/%E5%AD%A6%E6%A0%A1/%E5%A4%A7%E9%97%A8.jpg?sign=8d0aa094f851fe57a95b9654ae92f3ff&t=1697295907"></image>
+
+<view class="modal" bindtap='toggleModal' wx:if="{{showModal&&!showend&& preload}}" >
+  <view class="modal-content">
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 1rpx; top: 396rpx; width: 750rpx; height: 534rpx; display: block; box-sizing: border-box"></image>
+    <button class="btn1" wx:for="{{displayButtons}}" wx:key="{{index}}" bindtap="navigateTo" data-url="{{item.url}}" disabled="{{item.disabled}}" data-index="{{item.num}}" >{{item.name}}
+    </button>
+  </view>
+</view>
+
+
+<view class="modal" bindtap='toggleModal' wx:if="{{showend}}" >
+  <view class="modal-content">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 10rpx; top: 20rpx">游戏结束</text>
+        <text style="position: relative; left: -1rpx; top: 45rpx">恭喜你识别了种种骗术</text>
+        <!-- <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button> -->
+      </view>
+    </view>
+    <view class="modal" bindtap='toggleModa3' wx:if="{{weiwan}}" >
+  <view class="modal-content">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 10rpx; top: 20rpx"></text>
+        <text style="position: relative; left: -1rpx; top: 45rpx">只记得书包落在了学校</text>
+        <button class='btn1' bindtap="toggleModal3" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+
+    <view class="modal" bindtap='toggleModa3' wx:if="{{false}}" >
+  <view class="modal-content">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 10rpx; top: 20rpx"></text>
+        <text style="position: relative; left: -1rpx; top: 45rpx">加载中，请稍后</text>
+        <!-- <button class='btn1' bindtap="toggleModal3" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button> -->
+      </view>
+    </view>

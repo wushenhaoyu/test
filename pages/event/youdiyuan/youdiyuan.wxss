@@ -1,0 +1,12 @@
+/* pages/event/youdiyuan/youdiyuan.wxss */
+.text-shadow{
+	text-shadow:
+-1px -1px 0 rgb(0, 0, 0),  /* 左上方灰色边框 */
+1px -1px 0 rgb(0, 0, 0),   /* 右上方灰色边框 */
+-1px 1px 0 rgb(0, 0, 0),   /* 左下方灰色边框 */
+1px 1px 0 rgb(0, 0, 0),    /* 右下方灰色边框 */
+-1px 0 0 rgb(0, 0, 0),     /* 左边灰色边框 */
+1px 0 0 rgb(0, 0, 0),      /* 右边灰色边框 */
+0 -1px 0 rgb(0, 0, 0),     /* 上边灰色边框 */
+0 1px 0 rgb(0, 0, 0);      /* 下边灰色边框 */
+}

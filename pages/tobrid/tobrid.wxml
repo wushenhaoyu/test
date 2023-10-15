@@ -1,0 +1,9 @@
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/bbj.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+    <view class="finlist" wx:if="{{1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">今天是周末，你决定游戏来休息一下</text>
+        <button class='btn1' bindtap="startGame" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>

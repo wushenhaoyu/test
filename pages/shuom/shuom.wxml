@@ -1,0 +1,12 @@
+<view bindtap="handleImageClick">
+  <image class="background-image" src="{{imageUrls[currentIndex]}}" width="100%" mode="aspectFit"></image>
+</view>
+
+<!-- <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s1.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s1.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s2.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s3.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s4.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s5.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/s6.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image> -->

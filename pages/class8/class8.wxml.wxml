@@ -2,11 +2,11 @@
 <view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
   <!-- <image class="background-image" src="	cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230625131648.jpg" mode="aspectFill"></image> -->
 
-  <image class="background-image" src="{{image1}}" wx:if="{{showimage}}" mode="aspectFill"></image>
-  <image class="background-image" src="{{image1}}" wx:if="{{!showimage}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r4.png" wx:if="{{showren1}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r7.jpg" wx:if="{{showren2}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r6.jpg" wx:if="{{showren3}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/ct.png" mode="aspectFill"></image>
+
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/ct1.png" wx:if="{{showren1}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/ct2.png" wx:if="{{showren2}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/ct3.png" wx:if="{{showren3}}" mode="aspectFill"></image>
     <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
         <text>{{dialogueText}}</text>
     </view>

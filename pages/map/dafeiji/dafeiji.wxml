@@ -1,0 +1,6 @@
+<view class="back" >
+  
+  <info dataFromParent="{{main}}"></info>
+  <item dataFromParent="{{main}}"></item>
+</view>
+<image class="backimg" src="https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/%E5%AD%A6%E6%A0%A1/%E9%A3%9E%E6%9C%BA.jpg?sign=171df52fc7ec66c90cbeb7799ed62cb9&t=1697193841"  style="position: absolute; top: 0; left: 0;  z-index: -2;"></image>

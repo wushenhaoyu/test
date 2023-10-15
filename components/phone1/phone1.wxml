@@ -1,0 +1,30 @@
+<!--components/phone1/phone1.wxml-->
+
+  <view class="a" style="transition: all 1s;transform: translateY({{tran}});font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/shouji.png" mode="aspectFit" mode="scaleToFill" style="width: 100%; height: 100%; display: block; box-sizing: border-box; z-index: 5;"></image>
+  <view style="position: absolute;top: 3%; left: 12%; width: 76%; height: 5%;z-index: 6;display: flex;justify-content:space-between">
+      <text style="font-size: 3vw; color: white;font-weight: 500; letter-spacing: 0.1vw;">中国联通</text>
+      <view>
+      <text class=" cuIcon-rankfill" style="font-size: 3.5vw; color: white;"></text>
+      <text class="cuIcon-wifi " style="font-size: 3.5vw; color: white;"></text>
+      <image src="/电池.svg"mode="aspectFit" style="width: 4vw;height: 1.5vh;fill: white;"></image>
+    </view>
+    </view>
+    <view style="position: absolute; top: 10%; left: 10%;left: 10%; width: 80%; height: 20%;z-index: 6;">
+      <view style="font-size: 15vw;font-weight: 300;letter-spacing: 1.5vw; color: white;text-align: center;">{{hour}}:{{minute>10?"":0}}{{minute}}</view>
+      <view style="color: white;text-align: center;font-size: 4.5vw;font-weight: 300;">{{month}}月{{day}}日 {{xingqi}}</view>
+    </view>
+  
+    <scroll-view style="position: absolute; top: 30%; left: 10%;left: 10%; width: 80%; height: 40%;z-index: 6;" scroll-y="true">
+    <view wx:for="{{eventdata['phone']}}" wx:key="index" style="margin-bottom: 1vh;">
+      <view class="notification" wx:if="{{!item.state}}">
+  <image src="{{item.imgsrc}}" class="icon"></image>
+  <view class="content" bindtap="phoneEvent" data-id="{{item.url}}">
+    <view><text class="title">{{item.title}}</text></view>
+    <text class="message">{{item.content}}</text>
+  </view>
+</view>
+</view>
+</scroll-view>
+    
+  </view>

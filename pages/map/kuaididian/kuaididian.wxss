@@ -1,0 +1,8 @@
+#chara {
+  transition: all 1s;
+}
+.custom-class{
+  position: absolute;
+  right: 0;
+  bottom: 20;
+}

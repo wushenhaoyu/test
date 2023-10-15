@@ -1,34 +1,36 @@
 <!--pages/main/main.wxml.wxml-->
-<view class="container" style="width: 752rpx; height: 1446rpx; display: flex; box-sizing: border-box">
+<view class="container" style="width: 100vw;height: 100vh;">
 
   <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/bgt30.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
-  <image  src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/bg中间.png" mode="aspectFill" style="position: absolute; left: -23rpx; top: 182rpx; width: 804rpx; height: 736rpx; display: block; box-sizing: border-box"></image>
-  <image  class='background-image2'src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/bg2.png" mode="aspectFill" style="position: absolute; left: -22rpx; top: 208rpx; width: 804rpx; height: 614rpx; display: block; box-sizing: border-box"></image>
   <!-- <view class="input-area" style="width: 750rpx; height: 140rpx; display: block; box-sizing: border-box; position: relative; left: 18rpx; top: -4rpx"> -->
     <!-- <view style="display: flex; justify-content: center; align-items: center; height: 140rpx; width: 750rpx; box-sizing: border-box"> -->
-    <view class='button-74' style="font-family: SimSun, serif; font-size: 20px; width: 205rpx; height: 90rpx; display: block; box-sizing: border-box; position: relative; left: -240rpx; top: 12rpx"></view>
-    <text class="front700"  style="position: relative; left: 4rpx; top: -120rpx">运气:{{value2}}</text>
-    <text class="front700"  style="position: relative; left: -236rpx; top: -240rpx">第{{ts}}天</text>    
-    <text class="front700"  style="position: relative; left: 256rpx; top: -352rpx">点数:{{ds}}</text>
-    <view class='button-74' style="font-family: SimSun, serif; font-size: 20px; width: 205rpx; height: 90rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -489rpx"></view>
-    <view class='button-74' style="font-family: SimSun, serif; font-size: 20px; width: 205rpx; height: 90rpx; display: block; box-sizing: border-box; position: relative; left: 253rpx; top: -642rpx"></view>
- 
-    <!-- <view class='button-56' style="font-family: SimSun, serif; font-size: 20px; width: 168rpx; height: 90rpx; display: block; box-sizing: border-box; position: relative; left: -44rpx; top: 0rpx"></view>
-    <text class="dafront" style="width: 36rpx; height: 54rpx; display: block; box-sizing: border-box; position: relative; left: -146rpx; top: 0rpx">{{ts}}</text> -->
-    <!-- <text class='button-56' style="font-family: SimSun, serif; font-size: 20px; width: 168rpx; height: 90rpx; display: block; box-sizing: border-box; position: relative; left: -18rpx; top: 0rpx">{{value3}}</text>     -->
-    <!-- </view> -->
-  <!-- </view> -->
-  <!-- <view class="button-area-vertical" style="width: 205rpx; height: 253rpx; display: flex; box-sizing: border-box; position: relative; left: 292rpx; top: 24rpx">
-    <button class="btn" bindtap="incrementValues" style="width: 118rpx; height: 103rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">按钮1</button>
-    
-    <button class="btn" style="width: 118rpx; height: 103rpx; display: block; box-sizing: border-box; left: 0rpx; top: 20rpx; position: relative">按钮2</button>
-  </view> -->
+    <view class='button-74' style="font-family: SimSun, serif;  width: 40vw; height: 15vh; display: block; box-sizing: border-box; position: relative; left: -212rpx; top: 9rpx"><view style="font-size: 3vh;">第{{ts}}天</view><view style="font-size: 3vh;">点数:{{ds}}</view></view>
+    <!--<canvas id="canvas" type="2d" class="canvas" style="z-index: 2;position: relative;"></canvas>-->
+    <view style="display: flex; align-items: center;" >
+    <image style="flex: 1;width: 50vw;position: relative;" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy4.png" mode="aspectFit"></image>
+    <view style="justify-content: flex-end;height: 100%;display: flex;flex-direction: column;">
+     <!-- <view><button bindtap="toggleModal" class="cu-btn lg margin-xs shadow-lg animation-{{animation == 'kaishi'? 'scale-down' : '' }}" style="color: white;background-color: rgb(0, 64, 126);font-size: 4vh;width: 50vw;padding: 30px;">下一天</button></view>-->
+  <view style="display: flex;justify-content: space-between;">
+  <view >
+  <view  bindtap="phone" class="shadow-lg animation-{{animation == 'phone' ? 'scale-down' : '' }}" >
+  <text class="cuIcon-shake margin-xs lg" style="color: rgb(0, 64, 126);font-size: 6vh;text-align: center;"></text></view>
+  <view bindtap="phone" style="text-align: center;font-size: 2vh;font-weight: 900;"><text>手机</text></view>
+  </view>
+  <view>
+  <view  bindtap="bag" class="shadow-lg animation-{{animation == 'phone' ? 'scale-down' : '' }}" >
+  <text class="cuIcon-goods margin-xs lg" style="color: rgb(0, 64, 126);font-size: 6vh;text-align: center;"></text></view>
+  <view style="text-align: center;font-size: 2vh;font-weight: 900;"><text>背包</text></view>
+  </view>
+  <view>
+  <view  bindtap="kaishi" class="shadow-lg animation-{{animation == 'shuoming' ? 'scale-down' : '' }}" >
+  <text class="cuIcon-question margin-xs lg" style="color: rgb(0, 64, 126);font-size: 6vh;text-align: center;"></text></view>
+  <view style="text-align: center;font-size: 2vh;font-weight: 900;"><text>帮助</text></view>
+  </view>
+  </view>
+    </view>
+</view>
 
-  <!-- <image style="width: 562rpx; height: 191rpx; display: block; box-sizing: border-box; left: 0rpx; top: -170rpx; position: relative" src='cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/main/按钮下一天.png' bindtap="toggleModal"  class='button-image'/> -->
-  <view class='button-56' style="font-family: SimSun, serif; width: 610rpx; height: 130rpx; display: block; box-sizing: border-box; position: relative; left: 4rpx; top: 149rpx" bindtap="toggleModal" ></view>
-  <text class="front900" style="position: relative; left: -8rpx; top: -7rpx">下一天</text>
-  <text class="front900" style="position: relative; left: 4rpx; top: 41rpx">背包</text>
-  <view class='button-56' style="font-family: SimSun, serif; width: 610rpx; height: 130rpx; display: block; box-sizing: border-box; position: relative; left: 4rpx; top: -115rpx" bindtap="toggleModal2" ></view>
+
   <!-- <button class="btn" style="width: 506rpx; height: 106rpx; display: block; box-sizing: border-box; left: 0rpx; top: -15rpx; position: relative">背包</button> -->
 
 
@@ -36,9 +38,15 @@
 </view>
 <!-- -->
 
+<!-- <view class="modal" bindtap='toggleModal' wx:if="{{showModal&&!showend&& preload}}" > -->
+  <!-- showModal&&!showend -->
+<phone wx:if="{{isShowPhone}}"></phone>
+  <view  wx:if="{{isShowBag}}">
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230908130929.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 51rpx; top: 508rpx; width: 650rpx; height: 434rpx; display: block; box-sizing: border-box"></image>
+  </view>
 <view class="modal" bindtap='toggleModal' wx:if="{{showModal&&!showend}}" >
   <view class="modal-content">
-    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 1rpx; top: 396rpx; width: 750rpx; height: 534rpx; display: block; box-sizing: border-box"></image>
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230908130929.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 51rpx; top: 508rpx; width: 650rpx; height: 434rpx; display: block; box-sizing: border-box"></image>
     <button class="btn1" wx:for="{{displayButtons}}" wx:key="{{index}}" bindtap="navigateTo" data-url="{{item.url}}" disabled="{{item.disabled}}" data-index="{{item.num}}" >{{item.name}}
     </button>
 <!-- disabled="{{item.disabled}}" class="btn1"-->
@@ -54,14 +62,24 @@
         <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
         <text class="front900" style="position: relative; left: 10rpx; top: 20rpx">游戏结束</text>
         <text style="position: relative; left: -1rpx; top: 45rpx">恭喜你识别了种种骗术</text>
-        <button class='btn1' bindtap="handleGameOver" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+        <button class='btn1' bindtap="huigu" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">回顾</button>
       </view>
     </view>
     <view class="modal" bindtap='toggleModa3' wx:if="{{weiwan}}" >
   <view class="modal-content">
         <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
         <text class="front900" style="position: relative; left: 10rpx; top: 20rpx"></text>
-        <text style="position: relative; left: -1rpx; top: 45rpx">只记得书包落在了学习</text>
+        <text style="position: relative; left: -1rpx; top: 45rpx">只记得书包落在了学校</text>
         <button class='btn1' bindtap="toggleModal3" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>
+
+
+    <view class="modal" bindtap='toggleModa3' wx:if="{{false}}" >
+  <view class="modal-content">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 10rpx; top: 20rpx"></text>
+        <text style="position: relative; left: -1rpx; top: 45rpx">加载中，请稍后</text>
+        <!-- <button class='btn1' bindtap="toggleModal3" style="position: relative; left: -1rpx; top: 60rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button> -->
       </view>
     </view>

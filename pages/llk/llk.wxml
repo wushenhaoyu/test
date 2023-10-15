@@ -1,0 +1,15 @@
+<!--pages/llk/llk.wxml-->
+<view class="body">
+ <view class="tou" style="width: 750rpx; height: 78rpx; display: block; box-sizing: border-box">分数为：</view>
+  <view class="con" style="width: 900rpx; height: 1192rpx; display: block; box-sizing: border-box">
+    <block wx:for="{{list}}" >
+      <block wx:for="{{item}}" wx:for-item="da">
+        <view class="kuai" style='visibility:{{da[1]==-1?"hidden":""}}'   bindtap='danji' data-in='{{da}}'>
+
+          <image src="{{imgUrls[da[1]]}}" style="width: 80rpx; height: 80rpx; display: inline-block; box-sizing: border-box; z-index: -10"bindtap='danji' data-in='{{da}}'></image>
+        </view>
+      </block>
+    </block>
+  </view>
+ <view class="floor"></view>
+</view>

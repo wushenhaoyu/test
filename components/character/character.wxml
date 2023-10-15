@@ -1,0 +1,14 @@
+
+
+
+<image class="chara {{characterClass}}"  src="{{state?dataFromParent.src0:dataFromParent.src1}}"  bindtap="toggleCharacter" ></image>
+
+<view  class="caozuo {{isShow?'z':'caozuo1'}}" style="display: flex; flex-direction: column; align-items: center;font-size: 6vw;color: white;">
+  <view style="width: 100%;height: 50%;background-color: rgb(255, 170, 61);  border-top-left-radius: 4vw;border-top-right-radius: 4vw;"><view class="a text-with-black-border" bindtap="duihua"style="text-align: center;line-height:19vw ;font-weight: 900;" >对 话</view></view>
+  <view style="width: 100%;height: 50%;background-color: rgb(255, 111, 79);  border-bottom-left-radius: 4vw;border-bottom-right-radius: 4vw;"> <view class="a text-with-black-border" bindtap="leave" style="text-align: center;line-height:19vw ;font-weight: 900;">离 开</view></view> 
+</view>
+<view wx:if="{{state}}" class="{{text}} " style="position: absolute;bottom: 0;width: 100vw;height: 24vh;background-color:  rgb(255,241,212);left: 0;z-index: 5;transition: opacity 1s;">
+  <view  style="width: 100%;text-align: center;font-weight: 900;font-size: 8vw;color: rgb(136, 89, 49);margin-bottom: 2vh;margin-top:1vh ;">
+ {{dataFromParent.title}}</view>
+  <view  style="width: 100%;text-align: center;color:rgb(136, 89, 49);"><text  style="white-space: pre-line;font-weight: 600;font-size: 5vw;line-height: 3vh;">{{dataFromParent.content}}</text></view>
+</view>

@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"phone":"/components/phone1/phone1",
+    "button1":"/components/button2/button2"}
+}

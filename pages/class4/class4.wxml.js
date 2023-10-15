@@ -9,7 +9,7 @@ Page({
     dialogues: [
      "",
      "你在细细观察了这个包裹，发现：这并非你的包裹，但包裹内是价值100点的物品。", 
-     "你决定：",
+     "面对这价值不菲的包裹，你决定：",
      ""
      ],
     dialogueIndex: 0,
@@ -89,7 +89,7 @@ button2Tap: function() {
     app.globalData.ts=app.globalData.ts+1;
     // 跳转到主页面
     wx.redirectTo({
-      url: '../main/main.wxml'  // 这里的路径应根据实际的文件结构来填写
+      url: '../class5/class5.wxml'  // 这里的路径应根据实际的文件结构来填写
     });
   }
 })

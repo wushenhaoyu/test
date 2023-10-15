@@ -2,12 +2,11 @@
 <view class="container" style="width: 750rpx; height: 1384rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
   <!-- <image class="background-image" src="	cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230625131648.jpg" mode="aspectFill"></image> -->
 
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/cd1.jpg" wx:if="{{showimage}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/cd1.jpg" wx:if="{{!showimage}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r1.jpg" wx:if="{{showren1}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r2.jpg" wx:if="{{showren2}}" mode="aspectFill"></image>
-  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/r3.png" wx:if="{{showren3}}" mode="aspectFill"></image>
-    <view class="dialogueBox" bindtap="nextDialogue" style="width: 706rpx; height: 342rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy.png" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy1.png" wx:if="{{showren1}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy2.png" wx:if="{{showren2}}" mode="aspectFill"></image>
+  <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy3.png" wx:if="{{showren3}}" mode="aspectFill"></image>
+    <view class="dialogueBox" bindtap="nextDialogue" style="width: 718rpx; height: 415rpx; display: block; box-sizing: border-box; left: 22rpx; top: 972rpx; position: absolute">
         <text>{{dialogueText}}</text>
     </view>
 </view>

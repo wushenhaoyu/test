@@ -1,0 +1,4 @@
+<view class="back" style="background-image: url(https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/%E5%AD%A6%E6%A0%A1/%E6%B9%96%E8%BE%B9.jpg?sign=be55ca3e93d3af3b032555c9ad7b5fd9&t=1697251335);background-position: center;background-size: cover;">
+  <info dataFromParent="{{main}}"></info>
+<item dataFromParent="{{main}}"></item>
+</view>

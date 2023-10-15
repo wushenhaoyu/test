@@ -1,0 +1,19 @@
+/* components/info/info.wxss */
+.text-with-black-border {/*黑边字体*/
+
+  text-shadow:
+    -2px -2px 0 #888,  /* 左上方灰色边框 */
+    2px -2px 0 #888,   /* 右上方灰色边框 */
+    -2px 2px 0 #888,   /* 左下方灰色边框 */
+    2px 2px 0 #888,    /* 右下方灰色边框 */
+    -2px 0 0 #888,     /* 左边灰色边框 */
+    2px 0 0 #888,      /* 右边灰色边框 */
+    0 -2px 0 #888,     /* 上边灰色边框 */
+    0 2px 0 #888;      /* 下边灰色边框 */
+}
+.info{
+  transform: translateX(-100%);
+}
+.info1{
+  transform: translateX(0%);
+}

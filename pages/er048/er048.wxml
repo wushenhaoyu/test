@@ -1,0 +1,63 @@
+<View class="info">
+	<View class="score">
+		<View class="scoreContent">
+			<Text class="item titleItem">当前分数</Text>
+			<Text class="item contentItem" id="current_score">{{current_score}}</Text>
+		</View>
+	</View>
+
+  <View class="best" style="width: 250rpx; height: 108rpx; display: flex; box-sizing: border-box" bindtap="reset">
+		<View class="bestContent">
+			<Text class="item titleItem">RESTART</Text>
+			<Text class="item contentItem" id="best_score" style="width: -10rpx; height: -24rpx; display: block; box-sizing: border-box"></Text>
+		</View>
+	</View>
+
+	<View class="best">
+		<View class="bestContent">
+			<Text class="item titleItem">目标</Text>
+			<Text class="item contentItem" id="best_score">32</Text>
+		</View>
+	</View>
+</View>
+
+<!-- View.chessboard>View.row*4>View.column*4 -->
+
+<View class="chessboard" catchtouchstart="touchstart" catchtouchend="touchend">
+	<View class="row" wx:for="{{chessboardDatas}}" wx:for-index="idx" wx:for-item="chessboardColumn">
+		<View class="column" wx:for="{{chessboardColumn}}" wx:for-item="chessboardRow">{{chessboardRow>0?chessboardRow:''}}</View>
+	</View>
+</View>
+
+<View class="direction" style="width: 716rpx; height: 98rpx; display: flex; ">
+	<Button class="directionBtn" bindtap="turnUp" hover-class="directionBtn-hover" style="width: 136rpx; height: 98rpx; display: block; box-sizing: border-box; left: 29rpx; top: 0rpx; position: relative">
+			上
+	</Button>
+	<Button class="directionBtn" bindtap="turnRight" hover-class="directionBtn-hover" style="width: 136rpx; height: 98rpx; display: block; box-sizing: border-box; left: 22rpx; top: 0rpx; position: relative">
+		右
+	</Button>
+	<Button class="directionBtn" bindtap="turnDown" hover-class="directionBtn-hover" style="width: 136rpx; height: 98rpx; display: block; box-sizing: border-box; left: 16rpx; top: 0rpx; position: relative">
+		下
+	</Button>
+	<Button class="directionBtn" bindtap="turnLeft" hover-class="directionBtn-hover" style="width: 136rpx; height: 98rpx; display: block; box-sizing: border-box; left: 15rpx; top: 0rpx; position: relative">
+		左
+	</Button>
+</View>
+
+<View class="tips center"  style="width: 574rpx; height: 98rpx; display: block; box-sizing: border-box; left: 89rpx; top: 2rpx; position: relative">ps1:通过上下左右移动方块来合成更高分数的方块移动</View>
+<View class="tips center"  style="width: 574rpx; height: 98rpx; display: block; box-sizing: border-box; left: 89rpx; top: 2rpx; position: relative">ps2:在这次抢单小游戏中，请以最快的速度合成面值为‘32’方块</View>
+
+
+<!-- <toast hidden="{{toast2Hidden}}" duration="1500" bindchange="reset">
+	您已通关
+</toast> -->
+<!-- {{toast2Hidden}} -->
+<view class="finlist" wx:if="{{!toast2Hidden}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+        <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件结算：</text>
+        <text style="position: relative; left: -1rpx; top: 136rpx">成功抢到了一单：{{ds}}元</text>
+        <button class='btn1' bindtap="reset" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+      </view>
+    </view>

@@ -1,0 +1,45 @@
+
+<!--来自自己的-->
+<view wx:if="{{message.content&&(message.from == 0)}}" style="width: 100vw; display: flex; padding: 5vw; justify-content: flex-end;">
+<view wx:if="{{message.state == 0}}" style="display: flex;"><view style="width: 70vw;margin-right: 5vw;">
+<view style="width: 100%;display: flex;justify-content: flex-end;color: gray;line-height: 8vw;">{{message.name}}</view>
+<view style="width: 100%;display: flex;justify-content: flex-end;">
+<text style="white-space: normal;word-break: break-word;color: gray;background-color: rgb(58,155,252);color: white;border-radius: 2vw;line-height: 6vw;font-size: 5vw;padding:2vw">{{message.content}}</text>
+</view>
+</view>
+  <image class="cu-avatar"mode="aspectFit" style="width: 10vw;height:10vw;border-radius: 2vw;" src="{{message.touxiang}}"></image>
+</view>
+<view wx:if="{{message.state == 1}}" style="display: flex;">
+<view style="width: 70vw;margin-right: 5vw;">
+<view style="width: 100%;display: flex;justify-content: flex-end;color: gray;line-height: 8vw;">{{message.name}}</view>
+<view style="width: 100%;display: flex;justify-content: flex-end;">
+<image src="{{message.content}}" style="background-color: rgb(58,155,252);padding:6vw;border-radius: 2vw;"></image>
+</view>
+</view>
+<image class="cu-avatar"mode="aspectFit" style="width: 10vw;height:10vw;border-radius: 2vw;" src="{{message.touxiang}}"></image>
+</view>
+</view>
+
+
+
+<!--来自别人的-->
+<view wx:if="{{message.content&&(message.from == 1)}}" style="width: 100vw; display: flex; padding: 5vw; justify-content: flex-start;">
+	<view wx:if="{{message.state == 0}}" style="display: flex;">	 <image class="cu-avatar"mode="aspectFit" style="width: 10vw;height:10vw;border-radius: 2vw;" src="{{message.touxiang}}"></image>
+<view style="width: 70vw;margin-left: 3vw;">
+<view style="width: 100%;display: flex;justify-content: flex-start;color: gray;line-height: 8vw;">{{message.name}}</view>
+<view style="width: 100%;display: flex;justify-content: flex-start;">
+<text style="white-space: normal;word-break: break-word;color: gray;background-color: rgb(58,155,252);color: white;border-radius: 2vw;line-height: 6vw;font-size: 5vw;padding:2vw">{{message.content}}</text>
+</view>
+</view>
+</view>
+<view wx:if="{{message.state == 1}}" style="display: flex;">
+	<image class="cu-avatar"mode="aspectFit" style="width: 10vw;height:10vw;border-radius: 2vw;" src="{{message.touxiang}}"></image>
+<view style="width: 70vw;margin-left: 3vw;">
+<view style="width: 100%;display: flex;justify-content: flex-start;color: gray;line-height: 8vw;">{{message.name}}</view>
+<view style="width: 100%;display: flex;justify-content: flex-start;">
+	<image src="{{message.content}}" style="background-color: rgb(58,155,252);padding:6vw;border-radius: 2vw;"></image>
+</view>
+</view>
+</view>
+  
+</view>

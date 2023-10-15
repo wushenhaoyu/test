@@ -1,0 +1,64 @@
+<!--上部-->
+<view style="position:fixed;top:0;left:0;width: 100vw;height: 10vh;background-color:rgb(69,175,251);display: flex;justify-content: center;padding-top: 5vh;">
+<view style="color: white;font-size: 5vw;line-height: 5vh;">民间deeplearning交流中枢(1998)</view>
+</view>
+<!--上部-->
+
+<scroll-view scroll-into-view="{{scrollIntoView}}" style="height: 90vh; width: 100vw; margin-top: 10vh;padding-bottom: 8vh;background-color: rgb(247,247,248);" scroll-y="true" bindtap="addMessage">
+  <view wx:for="{{showMessageList}}" wx:for-item="item">
+    <chat message="{{item}}"></chat>
+  </view>
+  <view wx:if="{{isShowYourChoice}}"><view style="width: 100%;text-align: center;font-weight: bold;font-size: 6vw;margin-bottom: 1vh;">-----你的选择------</view>
+  <view  style="display: flex;justify-content: space-around;">
+	<view wx:for="{{yourChoice}}"  wx:for-item="item" wx:for-index="index" data-index="{{index}}" catchtap="pushYourChoice" style="width: 40vw; height: 20vw;  font-size: 5vw;text-align: center;background-color: rgb(236,236,241);padding:2vw">
+		<text style="white-space: normal;word-break: break-word;color: black;border-radius: 2vw;line-height: 8vw;padding:2vw">{{item.content}}</text>
+	</view>
+</view>
+  </view>
+  <view id="bottom"> </view>
+</scroll-view>
+
+
+
+
+
+
+
+
+<!--此部分为输入框--><view  class="box" style="position:fixed;bottom:0;left:0;width: 100vw;">
+<view class="cu-bar input">
+    <view class="action">
+      <text class="cuIcon-sound text-grey" style="font-size: 10vw;"></text>
+    </view>
+    <input disabled="{{true}}" value="{{placeholder}}" class="solid-bottom" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+    <view class="action">
+      <text class="cuIcon-emojifill text-grey" style="font-size: 10vw;"></text>
+    </view>
+    <button class="cu-btn  shadow-blur" style="height: 10vw;width: 20vw;font-size: 5vw;background-color: {{placeholder?'rgb(62, 142, 247)':'rgb(134,200,250)'}};color: white;" bindtap="sendYourChoice">发送</button>
+  </view>
+</view>
+<!--此部分为输入框-->
+
+<view wx:if="{{isShowEnd == 2}}" style="width: 100vw;height: 100hw;z-index: 2;"><!--被骗-->
+	<view style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);">
+<image  src="https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/jiesuan.png?sign=8c8e164e049bc11bce754c4cded38dad&t=1697358967; " style="width: 80vw;height: 30vh;transform: translateY(10%);">
+ </image>
+ <button bindtap="back" class="text-with-black-border" style="background-color: rgb(61,220,68);border:black;border-width: 0.5vw;border-style:solid;color: white;width: 40vw;height: 8vh;transform: translateY(-50%);font-size: 6vw;">确定</button>
+</view>
+ <view style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);text-align: center;">
+ <view style="font-size: 6vw;font-weight: bold;line-height: 9vw;">事件结束</view>
+ <text style="white-space: normal;word-break: break-word;border-radius: 2vw;line-height: 6vw;font-size: 5vw;">后来很多人都反映取不出钱了，那个王经理也消失匿迹</text>
+ </view>
+</view>
+
+<view wx:if="{{isShowEnd == 1}}" style="width: 100vw;height: 100hw;z-index: 2;"><!--没被骗-->
+	<view style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);">
+<image  src="https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/jiesuan.png?sign=8c8e164e049bc11bce754c4cded38dad&t=1697358967; " style="width: 80vw;height: 30vh;transform: translateY(10%);">
+ </image>
+ <button bindtap="back" class="text-with-black-border" style="background-color: rgb(61,220,68);border:black;border-width: 0.5vw;border-style:solid;color: white;width: 40vw;height: 8vh;transform: translateY(-50%);font-size: 6vw;">确定</button>
+</view>
+ <view style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);text-align: center;">
+ <view style="font-size: 6vw;font-weight: bold;line-height: 9vw;">事件结束</view>
+ <text style="white-space: normal;word-break: break-word;border-radius: 2vw;line-height: 6vw;font-size: 5vw;">刷了好久，取钱的时候需要提供你更多的敏感信息，你意识到你被骗了</text>
+ </view>
+</view>

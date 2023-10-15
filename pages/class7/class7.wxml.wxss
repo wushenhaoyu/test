@@ -1,4 +1,7 @@
 /* pages/class1/class1.wxml.wxss */
+page {
+  font-family:cursive;
+}
 .container {
   position: relative;
   width: 100%;
@@ -57,14 +60,32 @@
   border-radius: 10px;
 }
 
-.dialogueBox {
+/* .dialogueBox {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 20rpx;
   background: rgba(161, 153, 153, 0.5);
   color: #fff;
+} */
+
+/* .dialogueBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx;
+  background: linear-gradient(to right bottom, #add8e6, #003366);
+  color: #fff;
+} */
+.dialogueBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx;
+  background: linear-gradient(to right, rgba(59, 56, 56, 0.2), rgba(59, 56, 56, 0.8), rgba(59, 56, 56, 0.2));
+  color: #fff;
 }
+
 
 .finlist {
   position: fixed;

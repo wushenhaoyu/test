@@ -1,0 +1,53 @@
+/* components/item/item.wxss */
+@import '/icon.wxss';
+.border-example {
+  border-width: 2.5vw; /* 边框宽度为1像素 */
+  border-style: solid; /* 实线边框 */
+  border-color: black; /* 红色边框 */
+}
+.centered-container {
+  position: absolute;
+  top: 50%; /* 将容器的顶部移到屏幕中央 */
+  left: 50%; /* 将容器的左侧移到屏幕中央 */
+  transform: translate(-50%, -50%); /* 使用 transform 将容器水平和垂直居中 */
+}
+.caozuo{
+  width: 20vw;
+  height: 20vw;
+  border-radius: 5vw;
+  background-color:rgb(72,48,41);
+}
+.al{/*对齐用的*/
+  display: flex;
+  justify-content: center;
+}
+.text-with-black-border {/*黑边字体*/
+
+  text-shadow:
+    -1px -1px 0 #888,  /* 左上方灰色边框 */
+    1px -1px 0 #888,   /* 右上方灰色边框 */
+    -1px 1px 0 #888,   /* 左下方灰色边框 */
+    1px 1px 0 #888,    /* 右下方灰色边框 */
+    -1px 0 0 #888,     /* 左边灰色边框 */
+    1px 0 0 #888,      /* 右边灰色边框 */
+    0 -1px 0 #888,     /* 上边灰色边框 */
+    0 1px 0 #888;      /* 下边灰色边框 */
+}
+.text-with-black-border1 {/*黑边字体*/
+
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),  /* 左上方灰色边框 */
+    1px -1px 0 rgb(255, 255, 255),   /* 右上方灰色边框 */
+    -1px 1px 0 rgb(255, 255, 255),   /* 左下方灰色边框 */
+    1px 1px 0 rgb(255, 255, 255),    /* 右下方灰色边框 */
+    -1px 0 0 rgb(255, 255, 255),     /* 左边灰色边框 */
+    1px 0 0 rgb(255, 255, 255),      /* 右边灰色边框 */
+    0 -1px 0 rgb(255, 255, 255),     /* 上边灰色边框 */
+    0 1px 0 rgb(255, 255, 255);      /* 下边灰色边框 */
+}
+.yidong1{
+opacity: 0;
+}
+.yidong2{
+opacity: 1;
+}

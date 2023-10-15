@@ -1,39 +1,65 @@
 {
   "pages": [
+	"pages/main copy/main.wxml",
+	"pages/event/youdiyuan/youdiyuan",
+	"components/tip/tip",
+	"pages/phone/placeholder1/placeholder1",
+	"pages/er048/er048",
+	  "components/chatother/chatother",
+	"components/chatself/chatself",
+	"components/chatqq/chatqq",
+    "pages/map/youyongguan/youyongguan",
+    "pages/map/kuaididian/kuaididian",
+    "components/button2/button2",
+    "components/info/info",
+    "components/character/character",
+    "components/item/item",
+    "components/phone1/phone1",
     "pages/main/main.wxml",
+    "pages/llk/llk",
+    "pages/chouj/chouj",
+    "pages/class4/class4.wxml",
+    
+    "pages/class5/class5.wxml",
+    "pages/jies/jies",
+    "pages/class13/dache.wxml",
     "pages/class12/class12.wxml",
+    "pages/class14/class14.wxml",
+    "pages/shuom/shuom",
+    "pages/bird/bird",
+    "pages/tobrid2/tobrid",
     "pages/class10/class10.wxml",
     "pages/class8/class8.wxml",
     "pages/class9/class9.wxml",
     "pages/class7/class7.wxml",
-
     "pages/class6/class6.wxml",
-    "pages/bird/bird",
-
-
-    "pages/class5/class5.wxml",
-    "pages/class4/class4.wxml",
     "pages/class2/class2.wxml",
-
     "pages/class1/class1.wxml",
     "pages/class3/class3.wxml",
-    
-
-
-
-
-
-
     "pages/index/index",
-    "pages/logs/logs"
-
+    "pages/logs/logs",
+    "pages/tobrid/tobrid",
+    
+    "pages/phone/placeholder2/placeholder2",
+    "pages/phone/placeholder3/placeholder3",
+    "pages/phone/placeholder4/placeholder4",
+    "pages/map/qixianglou/qixianglou",
+    "pages/map/tushuguan/tushuguan",
+    "pages/map/qizhenhu/qizhenhu",
+    "pages/map/aoxiangxueshengzhongxin/aoxiangxueshengzhongxin",
+    "pages/map/shuzihuadalou/shuzihuadalou",
+    "pages/map/yuncanting/yuncanting",
+    "pages/map/xiaodongmen/xiaodongmen",
+    "pages/map/xiaoyiyuan/xiaoyiyuan",
+    "pages/map/xingcao/xingcao",
+    "pages/map/dafeiji/dafeiji",
+    "pages/map/dongmen/dongmen"
+    
+   
 
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

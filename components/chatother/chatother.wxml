@@ -1,0 +1,13 @@
+
+<view wx:if="{{message.content}}" style="width: 100vw; display: flex; padding: 5vw; justify-content: flex-start;">
+	<view wx:if="{{message.state == 1}}" style="display: flex;"></view>
+	<view class="cu-avatar" style="width: 10vw;height:10vw;border-radius: 2vw;background-image: url({{message.touxiang}});"></view>
+<view style="width: 70vw;margin-left: 3vw;">
+<view style="width: 100%;display: flex;justify-content: flex-start;color: gray;line-height: 8vw;">{{message.name}}</view>
+<view style="width: 100%;display: flex;justify-content: flex-start;">
+	<image src="{{message.content}}" style="background-color: rgb(58,155,252);padding:6vw;border-radius: 2vw;"></image>
+</view>
+
+</view>
+  
+</view>

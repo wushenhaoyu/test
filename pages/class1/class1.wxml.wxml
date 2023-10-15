@@ -13,7 +13,7 @@
     </view>
 </view>
 
-  <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx" >
+  <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -25rpx; top: -512rpx" >
       <!-- HTML !-->
     <view class="modal-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
 

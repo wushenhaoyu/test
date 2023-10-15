@@ -1,0 +1,23 @@
+<view style="width: 100vw; position: absolute;left: 0;top: 5vh;" bindtap="info">
+<view style="background-color: rgba(0, 0, 0, 0.425);width: 60vw;height: 30vw;border-radius: 5vw;margin-left:4vw ;display: flex;backdrop-filter: blur(5px);">
+<image src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/touxiang.png" style="width: 25vw;height: 25vw;margin-left: 5%;margin-top: 5%;background-color: honeydew;border-radius: 15vw;padding: 1vw;" mode="aspectFill"></image>
+<view>
+<view style="height: 50%;width: 30vw; font-weight: 800;font-size:5vw;">
+<view class="text-with-black-border" style="text-align: left;width: 100%;color: white;">当前位置:</view>
+<view class="text-with-black-border" style="text-align: right;width: 100%;color: white;">{{dataFromParent.name}}</view>
+</view>
+<view style="height: 50%;width: 30vw; font-weight: 800;font-size:5vw;">
+<view class="text-with-black-border" style="text-align: left;width: 100%;color: white;line-height: 15vw;">被骗次数: {{playerdata.cheat}}</view>
+</view>
+</view>
+</view>
+</view>
+<view wx:if="{{isShowInfo}}" class="{{info}}" bindtouchstart="hideinfo" style="position: absolute;top:0;left:0;width: 100vw;height: 100vh;z-index: 7;transition: all 1s;"><view style="position: absolute;left:0;top:5vh;width: 80vw;height: 60vh;background-color: rgb(162,134,110);border-radius: 5vw;">
+  <view style="width:72vw ;height: 56vh;background-color: rgb(88,73,60);margin:5%;border-radius: 5%;">
+    <view style="width: 80%;height: 8vh;">
+  <view><image src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/touxiang.png" style="width: 25vw;height: 25vw;margin-left: 5%;margin-top: 5%;background-color: honeydew;border-radius: 15vw;padding: 1vw;" mode="aspectFill"></image></view>
+  </view>
+  </view>
+  
+  
+</view></view>

@@ -1,0 +1,66 @@
+/* components/character/character.wxss */
+.chara{
+  transition: opacity 1.5s;
+  width: 40vw;
+  height: 60vw;
+}
+.chara1{
+  opacity: 0;
+}
+.chara2{
+  height: 80vw;
+  width: 80vw;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  bottom: 24vh;
+}
+.chara4{
+  height: 80vw;
+  width: 80vw;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 24vh;
+}
+.caozuo{
+  transition: all 0.5s;
+  display: flex;
+   flex-direction: column;
+    justify-content: space-around;
+     align-items: center; 
+  position:absolute;
+  right: 0;
+  bottom: 24vh;
+  width: 30vw;
+  height: 40vw;
+  border-radius: 5vw;
+  border: 1vw solid rgb(158, 103, 0);
+}
+.caozuo1{
+  opacity: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 0.3vh;
+  background-color: white; /* 设置分割线的颜色 */
+}
+.text{
+  opacity: 1;
+}
+.text1{
+  opacity: 0;
+}
+.text-with-black-border {/*黑边字体*/
+
+  text-shadow:
+    -2px -2px 0 #888,  /* 左上方灰色边框 */
+    2px -2px 0 #888,   /* 右上方灰色边框 */
+    -2px 2px 0 #888,   /* 左下方灰色边框 */
+    2px 2px 0 #888,    /* 右下方灰色边框 */
+    -2px 0 0 #888,     /* 左边灰色边框 */
+    2px 0 0 #888,      /* 右边灰色边框 */
+    0 -2px 0 #888,     /* 上边灰色边框 */
+    0 2px 0 #888;      /* 下边灰色边框 */
+}

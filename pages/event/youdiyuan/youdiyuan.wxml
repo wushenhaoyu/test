@@ -1,0 +1,21 @@
+<image src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/1.png" class="backimg1"></image>
+<view  bindtap="next" style="position: absolute;bottom: 0;width: 100vw;height: 24vh;background-color:  rgb(255,241,212);left: 0;z-index: 5;transition: opacity 1s;">
+  <view  style="width: 100%;text-align: center;font-weight: 900;font-size: 8vw;color: rgb(136, 89, 49);margin-top:1vh ;">
+ {{story[storyindex].name}}</view>
+  <view  style="width: 100%;text-align: center;color:rgb(136, 89, 49);padding-left: 2vw;"><text  style="white-space:normal;font-weight: 600;font-size: 5vw;line-height: 3vh;">
+  {{story[storyindex].text}}</text></view>
+</view>
+
+
+
+<!--是否接收礼物-->
+
+<view wx:if="{{isShowfirst}}" style="height: 100vh;width: 100vw;background-color: rgba(0, 0, 0, 0.61);position: absolute;top: 0;left: 0;z-index: 8;">
+<view style="position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);width: 80vw;height: 40vh;background-color:rgb(136, 89, 49) ;border-radius: 2vw;">
+<image src="https://7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662.tcb.qcloud.la/g.png?sign=9ff3ef61ae9dfd92afb2a2a281d69e57&t=1697372354"></image>
+<view class="text-shadow" style="position: absolute;bottom: 0; display: flex;justify-content: space-;width: 100%;">
+<button  style="width: 35vw;font-size: 6vw;background-color: rgb(255, 111, 79);color: white;border:black;border-width: 0.5vw;border-style:solid;">接收</button>
+<button style="width: 35vw;font-size: 6vw;background-color: rgb(61,220,68);color: white;border:black;border-width: 0.5vw;border-style:solid;">拒绝</button>
+</view>
+</view>
+</view>

@@ -1,0 +1,6 @@
+/* components/chatself/chatself.wxss */
+@import '/icon.wxss';
+@import '/main.wxss';
+page{
+	background-color: gainsboro;
+}

@@ -1,5 +1,7 @@
+<image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/bbj.png" mode="aspectFill" style="position: absolute; left: 5rpx; top: 0rpx"></image>
 <view>
-    <canvas canvas-id="birdId"  class="canvas" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></canvas>
+    <canvas canvas-id="birdId"  class="canvas" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"
+    wx:if="{{!kaishi&&modalHidden}}"></canvas>
     <!-- <modal title="像素鸟大战分数" class="modal" wx:if="{{!modalHidden}}" confirm-text="继 续" no-cancel bindconfirm="startGame" style="width: 750rpx; height: 866rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">  
         <view class="content" style="width: 54rpx; height: 40rpx; display: block; box-sizing: border-box; position: relative; left: 279rpx; top: 0rpx"> {{score}} </view>
     </modal> -->
@@ -12,11 +14,12 @@
       </view>
     </view>
     <view class="finlist" wx:if="{{kaishi}}">
-      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
-        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 54rpx; top: 542rpx; width: 662rpx; height: 364rpx; display: block; box-sizing: border-box"></image>
+      <view class="finlist-content" style="width: 704rpx; height: 498rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/jiesuan.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: 26rpx; top: 477rpx; width: 690rpx; height: 430rpx; display: block; box-sizing: border-box"></image>
         <text class="front900" style="position: relative; left: 13rpx; top: 127rpx">事件：</text>
         <text style="position: relative; left: -1rpx; top: 136rpx">今天是周末，你决定游戏来休息一下</text>
-        <button class='btn1' bindtap="startGame" style="position: relative; left: -1rpx; top: 147rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
+        <text style="position: relative; left: -1rpx; top: 136rpx">(请快速点击屏幕防止小鸟坠落)</text>
+        <button class='btn1' bindtap="startGame" style="position: relative; left: -17rpx; top: 449rpx; width: 178rpx; height: 80rpx; display: block; box-sizing: border-box">确定</button>
       </view>
     </view>
 

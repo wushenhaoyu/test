@@ -1,0 +1,53 @@
+
+<view  style="display: flex; align-items: center; position:absolute;bottom:0;width: 100vw;height: 10vh;padding-top: 0.5vh;padding-bottom:0.5vh ;background-color: rgb(162,134,110);" >
+    <!--<view style="display: flex;height: 100%;width: 50%;justify-content: center;"><image style="position: relative;height: 100%;" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/xy4.png" mode="heightFix"></image></view>-->
+    <view style="justify-content: flex-end;height: 100%;display: flex;flex-direction: column;flex: 1;">
+     <!-- <view><button bindtap="toggleModal" class="cu-btn lg margin-xs shadow-lg animation-{{animation == 'kaishi'? 'scale-down' : '' }}" style="color: white;background-color: rgb(0, 64, 126);font-size: 4vh;width: 50vw;padding: 30px;">下一天</button></view>-->
+    <view>
+     
+  <view class="r" style="display: flex;justify-content: space-around;align-items: center; ">
+    <view class="caozuo" style="color:{{isShowYidong ? 'rgb(255,178,74)' : 'white'}};">
+  <view  bindtap="yidong" class="shadow-lg al animation-{{animation == 'yidong' ? 'scale-down' : '' }}"  >
+  <text class="cuIcon-footprint margin-xs lg" style="font-size: 6vh;text-align: center;"></text></view>
+  <view style="text-align: center;font-size: 2vh;font-weight: 900;"><text>移动</text></view>
+  </view>
+  <view class="caozuo " style="color:{{isShowPhone ? 'rgb(255,178,74)' : 'white'}};">
+  <view  bindtap="phone" class="shadow-lg al animation-{{animation == 'phone' ? 'scale-down' : '' }}" >
+  <text class="cuIcon-shake margin-xs lg" style="font-size: 6vh;text-align: center;"></text></view>
+  <view bindtap="phone" style="text-align: center;font-size: 2vh;font-weight: 900; "><text>手机</text></view>
+  </view>
+	<view class="caozuo" style="color:{{isShowBag ? 'rgb(255,178,74)' : 'white'}};">
+  <view  bindtap="bag" class="shadow-lg al animation-{{animation == 'bag' ? 'scale-down' : '' }}"  >
+  <text class="cuIcon-goods margin-xs lg" style="font-size: 6vh;text-align: center;"></text></view>
+  <view style="text-align: center;font-size: 2vh;font-weight: 900;"><text>背包</text></view>
+  </view>
+  <view class="caozuo" style="color: {{animation == 'shuoming' ? 'rgb(255,178,74)' : 'white'}} ">
+  <view  bindtap="kaishi" class="shadow-lg al animation-{{animation == 'shuoming' ? 'scale-down' : '' }}"  >
+  <text class="cuIcon-question margin-xs lg" style="font-size: 6vh;text-align: center;"></text></view>
+  <view style="text-align: center;font-size: 2vh;font-weight: 900; "><text>帮助</text></view>
+  </view>
+    </view>
+  </view>
+</view>
+</view>
+<phone wx:if="{{isShowPhone}}" tran="{{PhoneControl}}" class="phone "></phone>
+  <view  wx:if="{{isShowBag}}">
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230908130929.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 51rpx; top: 508rpx; width: 650rpx; height: 434rpx; display: block; box-sizing: border-box"></image>
+  </view>
+<view class="modal" bindtap='toggleModal' wx:if="{{showModal&&!showend}}" >
+  <view class="modal-content">
+    <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/微信图片_20230908130929.png" mode="aspectFit" mode="scaleToFill" style="position: absolute; left: 51rpx; top: 508rpx; width: 650rpx; height: 434rpx; display: block; box-sizing: border-box"></image>
+    <button class="btn1" wx:for="{{displayButtons}}" wx:key="{{index}}" bindtap="navigateTo" data-url="{{item.url}}" disabled="{{item.disabled}}" data-index="{{item.num}}" >{{item.name}}
+    </button>
+
+
+  </view>
+</view>
+<view wx:if="{{isShowYidong}}" class="centered-container {{yidong}}" style="width: 80vw;height: 40vh;background-color: rgb(162,134,110);padding: 0vh 10vw 0 10vw;border-radius: 5vw;transition: all 1s;">
+<view style="display: flex;justify-content: center;"><view style="font-weight: 800;font-size:8vw;color: white;padding:1vw;margin:1vw;background-color: rgb(211,98,74);width: 60vw;text-align: center;border-radius: 2vw;">你要去哪?</view></view>
+<view  style="z-index: 5; display: flex;"  >
+  <view style="z-index: 2;width: 60vw; height: 32vh;backdrop-filter: blur(5px);display: flex; flex-direction: column;justify-content: space-evenly;background-color: rgb(88,73,60);border-radius: 2vw; ">
+    <button1 wx:for="{{dataFromParent.next}}" wx:for-item="value" wx:for-index="key" data-url="{{dataFromParent.next[key]}}" bindtap="turn"buttonText="{{key}}"></button1>
+  </view>
+</view>
+</view>

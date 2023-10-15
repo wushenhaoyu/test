@@ -1,6 +1,8 @@
-<view class="chat-container" bind:tap="NextMessage">
+<view class="back" bind:tap="NextMessage" style="padding-top: 4vh;">
   <!-- <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/1t.png" mode="aspectFill" style="position: relative; left: -30rpx; top: 460rpx; width: 750rpx; height: 1452rpx; display: block; box-sizing: border-box"></image> -->
-    <scroll-view scroll-y="true" style="height: 1146rpx; width: 750rpx; display: block; box-sizing: border-box" scroll-into-view="{{scrollIntoView}}">
+    
+    <view style="width: 100vw;height: 8vh;background-color: rgb(255, 255, 255);text-align: center;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size:3vh;line-height: 8vh;font-weight: 900;">交友聊天群(96)</view>
+    <scroll-view scroll-y="true" style="height: 1248rpx; width: 750rpx; display: block; box-sizing: border-box" scroll-into-view="{{scrollIntoView}}">
         <block wx:for="{{messages}}" wx:for-index="idx" wx:key="*this">
             <block wx:if="{{idx <= displayIndex}}">
                 <view id="msg{{idx}}" class="message" wx:if="{{item.from == 'me'}}" style="text-align: right; width: 450rpx; height: 84rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: -70rpx">
@@ -12,7 +14,7 @@
                 </view>
                 <view id="msg{{idx}}" class="message" wx:if="{{item.from == 'you'}}" style="text-align: left; position: relative; left: 0rpx; top: -50rpx; width: 450rpx; height: 142rpx; display: block; box-sizing: border-box">
                     <image style="position: relative; left: 0rpx; top: 1rpx" class="avatar" src="{{item.avatarUrl}}" wx:if="{{item.avatarUrl}}"/>
-                    <text class="nickname" style="position: relative; left: -88rpx; top: 31rpx">{{item.nickname}}</text>
+                    <text class="nickname" style="position: relative; left: -98rpx; top: 30rpx">{{item.nickname}}</text>
                     <view class="button-3" wx:if="{{!item.imageUrl}}"style="width: 446rpx; height: 80rpx; display: block; box-sizing: border-box; position: relative; left: 104rpx; top: -84rpx">{{item.text}}</view>
                     <image style="width: 188rpx; height: 127rpx; display: inline-block; box-sizing: border-box; position: relative; left: -45rpx; top: 18rpx" wx:if="{{item.imageUrl}}" class="image" src="{{item.imageUrl}}" />
                 </view>
@@ -25,49 +27,81 @@
     </view>
 </view>
 
-<view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
+<!-- <view class="modal" wx:if="{{showOverlay1}}" style="position: fixed; left: -1rpx; top: 0rpx">
     <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
         <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">下载</view>
         <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">先看看</view>
       </view>
-</view>
+</view> -->
+<view class="finlist" wx:if="{{showOverlay1}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(再看一下情况)</button>
+      </view>
+    </view>
 
-<view class="modal" wx:if="{{showOverlay2}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
-        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    <view class="finlist" wx:if="{{showOverlay2}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="navigateToPage2" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(再看一下情况)</button>
       </view>
-</view>
-<view class="modal" wx:if="{{showOverlay3}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
-        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    </view>
+
+    <view class="finlist" wx:if="{{showOverlay3}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="navigateToPage2" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(再看一下情况)</button>
       </view>
-</view>
-<view class="modal" wx:if="{{showOverlay4}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
-        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    </view>
+
+    <view class="finlist" wx:if="{{showOverlay4}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(再看一下情况)</button>
       </view>
-</view>
-<view class="modal" wx:if="{{showOverlay5}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试</view>
-        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    </view>
+
+    <view class="finlist" wx:if="{{showOverlay5}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(再看一下情况)</button>
       </view>
-</view>
-<view class="modal" wx:if="{{showOverlay6}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">我也去试试6</view>
-        <view class="button-3" bindtap="button2Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    </view>
+
+    <view class="finlist" wx:if="{{showOverlay6}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你回复道：</text>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我也去试试</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">这是什么？(点开看看)</button>
       </view>
-</view>
-<view class="modal" wx:if="{{showOverlay7}}" style="position: fixed; left: -1rpx; top: 0rpx">
-    <view class="modal-content" style="width: 682rpx; height: 264rpx; display: flex; box-sizing: border-box; position: relative; left: 1rpx; top: 0rpx">
-        <view class="button-3" bindtap="button13Tap" style="position: relative; left: -1rpx; top: -6rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">补齐</view>
-        <view class="button-3" bindtap="button1Tap" style="position: relative; left: -1rpx; top: 24rpx; width: 502rpx; height: 88rpx; display: block; box-sizing: border-box">再看看吧</view>
+    </view>
+
+    <view class="finlist" wx:if="{{showOverlay7}}">
+      <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">
+        <image class="background-image" src="cloud://zsypdd-3gjdwtt6b1a8a83a.7a73-zsypdd-3gjdwtt6b1a8a83a-1318405662/js2.png" mode="scaleToFill" mode="scaleToFill" style="position: absolute; left: -18rpx; top: 426rpx; width: 800rpx; height: 458rpx; display: block; box-sizing: border-box"></image>
+        
+        <text style="position: relative; left: -1rpx; top: -40rpx">对此，你觉得应该干些什么：</text>
+        <button class='btn1' bindtap="button3Tap" style="position: relative; left: -1rpx; top: 38rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">我先补齐吧</button>
+        <button class='btn1' bindtap="button1Tap" style="position: relative; left: -1rpx; top: 46rpx; width: 472rpx; height: 80rpx; display: block; box-sizing: border-box">......(看看别人也这样吗)</button>
       </view>
-</view>
+    </view>
 
 <view class="finlist" wx:if="{{showGameOverModal1}}">
       <view class="finlist-content" style="width: 682rpx; height: 456rpx; display: flex; box-sizing: border-box">

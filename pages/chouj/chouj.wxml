@@ -1,0 +1,7 @@
+<view>学长学姐交友软件</view>
+<view class="container">
+  <image style="width: 480rpx; height: 443rpx; display: block; box-sizing: border-box" src="{{imgUrls[currentIndex]}}" bindtap="stopLoop" class="img-display"/>
+  <button bindtap="stopLoop">停止展示</button>
+</view>
+
+
